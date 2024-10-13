@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TextAnalyser</title>
+    <style>
+        
+        body {
+  font-family: Montserrat, sans-serif;
+  background-color: #f7f7f7;
+}
+
+h1 {
+  text-align: center;
+  color: #2f4f7f;
+  margin-bottom: 20px;
+  font-size: 36px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+h2 {
+  color: #666;
+  margin-bottom: 10px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+form {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 18px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  resize: vertical;
+}
+
+/* Custom checkbox */
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+input[type="checkbox"]:checked {
+  background-color: #2f4f7f;
+  border: 1px solid #2f4f7f;
+}
+
+button[type="submit"] {
+  background-color: #2f4f7f;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+button[type="submit"]:hover {
+  background-color: #354a5f;
+}
+
+
+    </style>
+</head>
+<body>
+    <h1>Welcome to Text Analyser</h1>
+    <form action='/analyze' method='post'> 
+        {% csrf_token %}
+        <h2>Enter your Text</h2>
+        <textarea name="text" style="margin:0px; width:721px; height:93px"></textarea><br>
+           
+        <input type="checkbox" name="removepunc">Remove Punctuations<br>
+        <input type="checkbox" name="fullcaps">UPPERCASE<br>
+        <input type="checkbox" name="newlineremover">New Line Remover<br>
+        <input type="checkbox" name="extraspaceremover">Extra Space Remover<br>
+        <input type="checkbox" name="charcount">Character Count<br>
+        <button type="submit">Analyze Text</button>
+    </form>
+    </div>
+</body>
+</html>
